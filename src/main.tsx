@@ -1,10 +1,14 @@
 import React from 'react'
 
 import { App } from '@/components/app/App'
+import { MarvelService } from '@/services/MarvelService'
 import ReactDOM from 'react-dom/client'
 
 import './style/style.scss'
 
+const marvelService = new MarvelService()
+
+marvelService.getAllCharacters().then(res => res.data.results)
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <App />
