@@ -12,6 +12,7 @@ class RandomChar extends Component<{}, StateType> {
   marvelService = new MarvelService()
   onChatLoaded = (char: RandomCharStateType) => this.setState({ char, loading: false })
   setError = () => this.setState({ error: true, loading: false })
+  setLoading = () => this.setState({ loading: true })
   state: StateType = {
     char: {
       descr: null,
@@ -25,17 +26,13 @@ class RandomChar extends Component<{}, StateType> {
   }
 
   updateChar = () => {
+    this.setLoading()
     const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000)
 
-    this.marvelService
-      .getCharacterById(id)
-      .then(res => this.onChatLoaded(res))
-      .catch(() => this.setError())
+    this.marvelService.getCharacterById(id).then(this.onChatLoaded).catch(this.setError)
   }
 
-  constructor(props: any) {
-    super(props)
-
+  componentDidMount() {
     this.updateChar()
   }
 
@@ -61,7 +58,7 @@ class RandomChar extends Component<{}, StateType> {
             Do you want to get to know him better?
           </p>
           <p className={'randomchar__title'}>Or choose another one</p>
-          <button className={'button button__main'}>
+          <button className={'button button__main'} onClick={() => this.updateChar()}>
             <div className={'inner'}>try it</div>
           </button>
           <img alt={'mjolnir'} className={'randomchar__decoration'} src={mjolnir} />
@@ -73,10 +70,15 @@ class RandomChar extends Component<{}, StateType> {
 
 const View = ({ char }: { char: RandomCharStateType }) => {
   const { descr, homepage, name, thumbnail, wiki } = char
+  const img = thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg'
 
   return (
     <div className={'randomchar__block'}>
-      <img alt={'Random character'} className={'randomchar__img'} src={thumbnail ?? ''} />
+      <img
+        alt={'Random character'}
+        className={`randomchar__img ${img ? 'contain' : ''}`}
+        src={thumbnail ?? ''}
+      />
       <div className={'randomchar__info'}>
         <p className={'randomchar__name'}>{name}</p>
         <p className={'randomchar__descr'}>

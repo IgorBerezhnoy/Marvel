@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad500217-7d52-4e36-b85e-391907dea352" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/errorMessage/error.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/errorMessage/errorMessage.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/errorMessage/errorMessage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/loader/loader.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/loader/loader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vite-env.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/randomChar/RandomChar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/randomChar/RandomChar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/randomChar/randomChar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/randomChar/randomChar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +122,7 @@
       <workItem from="1703416926623" duration="717000" />
       <workItem from="1703417674521" duration="14023000" />
       <workItem from="1703475100605" duration="1121000" />
-      <workItem from="1704699055969" duration="6583000" />
+      <workItem from="1704699055969" duration="10634000" />
     </task>
     <task id="LOCAL-00001" summary="git commit -m &quot;Initial commit&quot;">
       <option name="closed" value="true" />
@@ -161,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703439793967</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="finished lesson 150">
+      <option name="closed" value="true" />
+      <created>1704719185860</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1704719185860</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +186,7 @@
     <MESSAGE value="all files correcting" />
     <MESSAGE value="all files correcting #2" />
     <MESSAGE value="finished lesson 149 and homework" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished lesson 149 and homework" />
+    <MESSAGE value="finished lesson 150" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished lesson 150" />
   </component>
 </project>
