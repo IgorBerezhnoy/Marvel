@@ -1,43 +1,57 @@
-@import '../../style/variables.scss';
+@import '../../style/variables';
 
 .char {
   &__content {
-    margin-top: 50px;
     display: grid;
     grid-template-columns: 650px 425px;
     column-gap: 25px;
     align-items: start;
+
+    margin-top: 50px;
   }
+
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 200px);
-    column-gap: 25px;
-    row-gap: 30px;
+    gap: 30px 25px;
   }
+
   &__item {
+    cursor: pointer;
+
     width: 200px;
     height: 318px;
-    background-color: $dark;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
     padding: 15px;
-    cursor: pointer;
+
+    background-color: $dark;
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 25%);
+
     transition: 0.3s transform;
+
     img {
+      transform: translate(-15px, -15px);
       width: 200px;
       height: 200px;
       object-fit: cover;
-      transform: translate(-15px, -15px);
     }
+
     &_selected {
-      box-shadow: 0 5px 20px $main-color;
       transform: translateY(-8px);
+      box-shadow: 0 5px 20px $main-color;
     }
   }
+
   &__name {
-    font-weight: bold;
     font-size: 22px;
+    font-weight: bold;
     line-height: 29px;
-    text-transform: uppercase;
     color: #fff;
+    text-transform: uppercase;
+  }
+}
+
+.fill {
+  img {
+    object-fit: fill;
   }
 }

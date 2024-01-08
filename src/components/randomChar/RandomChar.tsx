@@ -17,6 +17,7 @@ class RandomChar extends Component<{}, StateType> {
     char: {
       descr: null,
       homepage: null,
+      id: 1,
       name: null,
       thumbnail: null,
       wiki: null,
@@ -70,13 +71,14 @@ class RandomChar extends Component<{}, StateType> {
 
 const View = ({ char }: { char: RandomCharStateType }) => {
   const { descr, homepage, name, thumbnail, wiki } = char
-  const img = thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg'
+  const haveImg =
+    thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg'
 
   return (
     <div className={'randomchar__block'}>
       <img
         alt={'Random character'}
-        className={`randomchar__img ${img ? 'contain' : ''}`}
+        className={`randomchar__img ${haveImg ? 'contain' : ''}`}
         src={thumbnail ?? ''}
       />
       <div className={'randomchar__info'}>
@@ -105,6 +107,7 @@ export default RandomChar
 export type RandomCharStateType = {
   descr: null | string
   homepage: null | string
+  id: number
   name: null | string
   thumbnail: null | string
   wiki: null | string

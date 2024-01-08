@@ -5,17 +5,18 @@ export class MarvelService {
   _apiBase = 'https://gateway.marvel.com:443/v1/public/'
   _apiKey = 'apikey=5a3bb599208562ea7f03278e7e459f5e'
   _transformCharacter = (res: CharacterType): RandomCharStateType => {
-    const { description, name, thumbnail, urls } = res
+    const { description, id, name, thumbnail, urls } = res
 
     return {
       descr: description,
       homepage: urls[0].url,
+      id,
       name: name,
       thumbnail: thumbnail.path + '.' + thumbnail.extension,
       wiki: urls[1].url,
     }
   }
-  getAllCharacters = async (): Promise<RandomCharStateType> => {
+  getAllCharacters = async (): Promise<RandomCharStateType[]> => {
     const res = await this.getResource(
       `${this._apiBase}characters?limit=9&offset=210&${this._apiKey}`
     )
