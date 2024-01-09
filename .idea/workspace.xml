@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad500217-7d52-4e36-b85e-391907dea352" name="Changes" comment="">
+    <list default="true" id="ad500217-7d52-4e36-b85e-391907dea352" name="Changes" comment="finished homeWork 151">
+      <change afterPath="$PROJECT_DIR$/src/utils/haveImg.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/charInfo/CharInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/charInfo/CharInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/charInfo/charInfo.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/charInfo/charInfo.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/charList/CharList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/charList/CharList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/charList/charList.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/charList/charList.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/randomChar/RandomChar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/randomChar/RandomChar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/MarvelService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/MarvelService.ts" afterDir="false" />
     </list>
@@ -19,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -63,28 +66,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/programing_2.0/udemy/JS+React/chapter_6_midle_React/marvel/vite-project/src/components/errorMessage",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.stylelint": "D:\\programing_2.0\\udemy\\JS+React\\chapter_6_midle_React\\marvel\\vite-project\\node_modules\\stylelint",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "D:\\programing_2.0\\udemy\\JS+React\\chapter_6_midle_React\\marvel\\vite-project\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "cn.yiiguxing.plugin.translate",
-    "ts.external.directory.path": "D:\\programing_2.0\\udemy\\JS+React\\chapter_6_midle_React\\marvel\\vite-project\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/programing_2.0/udemy/JS+React/chapter_6_midle_React/marvel/vite-project/src/components/errorMessage&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;D:\\programing_2.0\\udemy\\JS+React\\chapter_6_midle_React\\marvel\\vite-project\\node_modules\\stylelint&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\programing_2.0\\udemy\\JS+React\\chapter_6_midle_React\\marvel\\vite-project\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;cn.yiiguxing.plugin.translate&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\programing_2.0\\udemy\\JS+React\\chapter_6_midle_React\\marvel\\vite-project\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\programing_2.0\udemy\JS+React\chapter_6_midle_React\marvel\vite-project\src\components\errorMessage" />
@@ -123,7 +126,8 @@
       <workItem from="1703416926623" duration="717000" />
       <workItem from="1703417674521" duration="14023000" />
       <workItem from="1703475100605" duration="1121000" />
-      <workItem from="1704699055969" duration="15743000" />
+      <workItem from="1704699055969" duration="19223000" />
+      <workItem from="1704786558477" duration="5457000" />
     </task>
     <task id="LOCAL-00001" summary="git commit -m &quot;Initial commit&quot;">
       <option name="closed" value="true" />
@@ -173,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704724903391</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="finished homeWork 151">
+      <option name="closed" value="true" />
+      <created>1704737743443</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1704737743443</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +209,7 @@
     <MESSAGE value="finished lesson 149 and homework" />
     <MESSAGE value="finished lesson 150" />
     <MESSAGE value="finished lesson 151" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished lesson 151" />
+    <MESSAGE value="finished homeWork 151" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished homeWork 151" />
   </component>
 </project>

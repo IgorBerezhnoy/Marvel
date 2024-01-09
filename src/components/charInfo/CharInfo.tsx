@@ -1,53 +1,101 @@
+import { Component } from 'react'
+
+import { ErrorMessage } from '@/components/errorMessage/errorMessage'
+import { RandomCharStateType } from '@/components/randomChar/RandomChar'
+import Skeleton from '@/components/skeleton/Skeleton'
+import { MarvelService } from '@/services/MarvelService'
+import { haveImg } from '@/utils/haveImg'
+
 import './charInfo.scss'
 
-import thor from '../../resources/img/thor.jpeg'
+class CharInfo extends Component<Props, StateType> {
+  marvelService = new MarvelService()
+  onChatLoaded = (char: RandomCharStateType) => this.setState({ char, loading: false })
+  setError = () => this.setState({ error: true, loading: false })
+  setLoading = (loading: boolean) => this.setState({ loading })
+  state: StateType = {
+    char: {
+      comics: undefined,
+      descr: null,
+      homepage: null,
+      id: null,
+      name: null,
+      thumbnail: null,
+      wiki: null,
+    },
+    error: false,
+    loading: false,
+  }
+  updateChar = () => {
+    const { selectedCharId } = this.props
 
-const CharInfo = () => {
+    if (!selectedCharId) {
+      return
+    }
+    this.setLoading(true)
+    this.marvelService.getCharacterById(selectedCharId).then(this.onChatLoaded).catch(this.setError)
+  }
+
+  componentDidMount() {
+    this.updateChar()
+  }
+
+  componentDidUpdate(prevProps: Readonly<Props>) {
+    if (this.props.selectedCharId !== prevProps.selectedCharId) {
+      this.updateChar()
+    }
+  }
+
+  render() {
+    const { char, error, loading } = this.state
+
+    return (
+      <div className={'char__info'}>
+        {/* eslint-disable-next-line no-nested-ternary */}
+        {loading ? <Skeleton /> : error ? <ErrorMessage /> : <View char={char} />}
+      </div>
+    )
+  }
+}
+
+const View = ({ char }: { char: RandomCharStateType }) => {
+  const { comics, descr, homepage, name, thumbnail, wiki } = char
+
+  const comicsItems = comics?.items.slice(10).map((el, i) => (
+    <li className={'char__comics-item'} key={i}>
+      {el.name}
+    </li>
+  ))
+
   return (
-    <div className={'char__info'}>
+    <>
       <div className={'char__basics'}>
-        <img alt={'abyss'} src={thor} />
+        <img alt={`abyss`} src={thumbnail ?? ''} style={haveImg(thumbnail!)} />
         <div>
-          <div className={'char__info-name'}>thor</div>
+          <div className={'char__info-name'}>{name}</div>
           <div className={'char__btns'}>
-            <a className={'button button__main'} href={'#'}>
+            <a className={'button button__main'} href={homepage ?? ''}>
               <div className={'inner'}>homepage</div>
             </a>
-            <a className={'button button__secondary'} href={'#'}>
+            <a className={'button button__secondary'} href={wiki ?? ''}>
               <div className={'inner'}>Wiki</div>
             </a>
           </div>
         </div>
       </div>
-      <div className={'char__descr'}>
-        In Norse mythology, Loki is a god or jötunn (or both). Loki is the son of Fárbauti and
-        Laufey, and the brother of Helblindi and Býleistr. By the jötunn Angrboða, Loki is the
-        father of Hel, the wolf Fenrir, and the world serpent Jörmungandr. By Sigyn, Loki is the
-        father of Nari and/or Narfi and with the stallion Svaðilfari as the father, Loki gave
-        birth—in the form of a mare—to the eight-legged horse Sleipnir. In addition, Loki is
-        referred to as the father of Váli in the Prose Edda.
-      </div>
-      <div className={'char__comics'}>Comics:</div>
-      <ul className={'char__comics-list'}>
-        <li className={'char__comics-item'}>All-Winners Squad: Band of Heroes (2011) #3</li>
-        <li className={'char__comics-item'}>Alpha Flight (1983) #50</li>
-        <li className={'char__comics-item'}>Amazing Spider-Man (1999) #503</li>
-        <li className={'char__comics-item'}>Amazing Spider-Man (1999) #504</li>
-        <li className={'char__comics-item'}>
-          AMAZING SPIDER-MAN VOL. 7: BOOK OF EZEKIEL TPB (Trade Paperback)
-        </li>
-        <li className={'char__comics-item'}>
-          Amazing-Spider-Man: Worldwide Vol. 8 (Trade Paperback)
-        </li>
-        <li className={'char__comics-item'}>
-          Asgardians Of The Galaxy Vol. 2: War Of The Realms (Trade Paperback)
-        </li>
-        <li className={'char__comics-item'}>Vengeance (2011) #4</li>
-        <li className={'char__comics-item'}>Avengers (1963) #1</li>
-        <li className={'char__comics-item'}>Avengers (1996) #1</li>
-      </ul>
-    </div>
+      <div className={'char__descr'}>{descr || "Sorry, we don't have any information"}</div>
+      {comicsItems ?? (
+        <>
+          <div className={'char__comics'}>Comics:</div>
+          <ul className={'char__comics-list'}>{comicsItems}</ul>
+        </>
+      )}
+    </>
   )
 }
+
+type Props = { selectedCharId: null | number }
+
+type StateType = { char: RandomCharStateType; error: boolean; loading: boolean }
 
 export default CharInfo

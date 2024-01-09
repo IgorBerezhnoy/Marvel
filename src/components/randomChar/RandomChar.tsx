@@ -3,6 +3,7 @@ import { Component } from 'react'
 import { ErrorMessage } from '@/components/errorMessage/errorMessage'
 import { Loader } from '@/components/loader/loader'
 import { MarvelService } from '@/services/MarvelService'
+import { RootObjectDataResultsComics } from '@/services/MarvelServiceType'
 
 import './randomChar.scss'
 
@@ -17,7 +18,7 @@ class RandomChar extends Component<{}, StateType> {
     char: {
       descr: null,
       homepage: null,
-      id: 1,
+      id: null,
       name: null,
       thumbnail: null,
       wiki: null,
@@ -105,9 +106,10 @@ type StateType = { char: RandomCharStateType; error: boolean; loading: boolean }
 
 export default RandomChar
 export type RandomCharStateType = {
+  comics?: RootObjectDataResultsComics
   descr: null | string
   homepage: null | string
-  id: number
+  id: null | number
   name: null | string
   thumbnail: null | string
   wiki: null | string

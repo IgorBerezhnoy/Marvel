@@ -1,12 +1,13 @@
-import { CSSProperties, Component } from 'react'
+import { Component } from 'react'
 
 import { Loader } from '@/components/loader/loader'
 import { RandomCharStateType } from '@/components/randomChar/RandomChar'
 import { MarvelService } from '@/services/MarvelService'
+import { haveImg } from '@/utils/haveImg'
 
 import './charList.scss'
 
-class CharList extends Component<any, StateType> {
+class CharList extends Component<Props, StateType> {
   loadMore = () => {
     this.setLoading(true)
 
@@ -37,14 +38,15 @@ class CharList extends Component<any, StateType> {
   }
 
   render() {
+    const { onCharSelected } = this.props
     const { chars, loading } = this.state
-    const haveImg = (thumbnail: string) =>
-      thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg'
-        ? ({ objectFit: 'fill' } as CSSProperties)
-        : undefined
 
     const charItems = chars.map(el => (
-      <li className={'char__item char__item_selected'} key={el.id}>
+      <li
+        className={'char__item char__item_selected'}
+        key={el.id}
+        onClick={() => onCharSelected(el.id)}
+      >
         <img alt={'abyss'} src={el.thumbnail ?? ''} style={haveImg(el.thumbnail!)} />
         <div className={'char__name'}>{el.name}</div>
       </li>
@@ -75,3 +77,4 @@ type StateType = {
   error: boolean
   loading: boolean
 }
+type Props = { onCharSelected: (id: null | number) => void }

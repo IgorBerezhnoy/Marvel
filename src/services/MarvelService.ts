@@ -5,9 +5,10 @@ export class MarvelService {
   _apiBase = 'https://gateway.marvel.com:443/v1/public/'
   _apiKey = 'apikey=5a3bb599208562ea7f03278e7e459f5e'
   _transformCharacter = (res: CharacterType): RandomCharStateType => {
-    const { description, id, name, thumbnail, urls } = res
+    const { comics, description, id, name, thumbnail, urls } = res
 
     return {
+      comics,
       descr: description,
       homepage: urls[0].url,
       id,
