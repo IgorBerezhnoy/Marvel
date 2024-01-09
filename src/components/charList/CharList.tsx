@@ -27,8 +27,14 @@ class CharList extends Component<Props, StateType> {
       }
     })
   }
+  setActiveItem = (id: null | number) => {
+    this.setState({ activeItem: id })
+    this.props.onCharSelected(id)
+  }
   setLoading = (loading: boolean) => this.setState({ loading })
+
   state: StateType = {
+    activeItem: null,
     chars: [],
     charsEnd: false,
     error: false,
@@ -41,14 +47,19 @@ class CharList extends Component<Props, StateType> {
   }
 
   render() {
-    const { onCharSelected } = this.props
-    const { chars, charsEnd, loading } = this.state
+    const { activeItem, chars, charsEnd, loading } = this.state
 
     const charItems = chars.map(el => (
       <li
-        className={'char__item char__item_selected'}
+        className={`char__item  ${activeItem === el.id ? 'char__item_selected' : ''}`}
         key={el.id}
-        onClick={() => onCharSelected(el.id)}
+        onClick={() => this.setActiveItem(el.id)}
+        onKeyDown={e => {
+          if (e.key === ' ' || e.key === 'Enter') {
+            this.setActiveItem(el.id)
+          }
+        }}
+        tabIndex={0}
       >
         <img alt={'abyss'} src={el.thumbnail ?? ''} style={haveImg(el.thumbnail!)} />
         <div className={'char__name'}>{el.name}</div>
@@ -81,6 +92,7 @@ class CharList extends Component<Props, StateType> {
 
 export default CharList
 type StateType = {
+  activeItem: null | number
   chars: RandomCharStateType[]
   charsEnd: boolean
   error: boolean

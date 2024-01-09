@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad500217-7d52-4e36-b85e-391907dea352" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/errorBoundary/errorBoundary.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/charInfo/CharInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/charInfo/CharInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/charList/CharList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/charList/CharList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/charList/charList.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/charList/charList.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/randomChar/randomChar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/randomChar/randomChar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/MarvelService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/MarvelService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/button.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +121,8 @@
       <workItem from="1703417674521" duration="14023000" />
       <workItem from="1703475100605" duration="1121000" />
       <workItem from="1704699055969" duration="19223000" />
-      <workItem from="1704786558477" duration="14092000" />
+      <workItem from="1704786558477" duration="15392000" />
+      <workItem from="1704813950918" duration="2098000" />
     </task>
     <task id="LOCAL-00001" summary="git commit -m &quot;Initial commit&quot;">
       <option name="closed" value="true" />
@@ -194,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704796582786</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="finished lessons #153-154">
+      <option name="closed" value="true" />
+      <created>1704805774571</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1704805774571</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,6 +222,7 @@
     <MESSAGE value="finished lesson 151" />
     <MESSAGE value="finished homeWork 151" />
     <MESSAGE value="finished lesson #152" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished lesson #152" />
+    <MESSAGE value="finished lessons #153-154" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished lessons #153-154" />
   </component>
 </project>
