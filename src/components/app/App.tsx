@@ -1,5 +1,7 @@
 import { Component } from 'react'
 
+import { ErrorBoundary } from '@/components/errorBoundary/errorBoundary'
+
 import decoration from '../../resources/img/Vision.png'
 import AppHeader from '../appHeader/AppHeader'
 import CharInfo from '../charInfo/CharInfo'
@@ -20,10 +22,16 @@ export class App extends Component<any, StateType> {
       <div className={'app'}>
         <AppHeader />
         <main>
-          <RandomChar />
+          <ErrorBoundary>
+            <RandomChar />
+          </ErrorBoundary>
           <div className={'char__content'}>
-            <CharList onCharSelected={this.onCharSelected} />
-            <CharInfo selectedCharId={selectedCharId} />
+            <ErrorBoundary>
+              <CharList onCharSelected={this.onCharSelected} />
+            </ErrorBoundary>
+            <ErrorBoundary>
+              <CharInfo selectedCharId={selectedCharId} />
+            </ErrorBoundary>
           </div>
           <img alt={'vision'} className={'bg-decoration'} src={decoration} />
         </main>

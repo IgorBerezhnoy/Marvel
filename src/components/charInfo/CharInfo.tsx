@@ -84,11 +84,13 @@ const View = ({ char }: { char: RandomCharStateType }) => {
         </div>
       </div>
       <div className={'char__descr'}>{descr || "Sorry, we don't have any information"}</div>
-      {comicsItems ?? (
+      {comicsItems?.length ? (
         <>
           <div className={'char__comics'}>Comics:</div>
           <ul className={'char__comics-list'}>{comicsItems}</ul>
         </>
+      ) : (
+        ''
       )}
     </>
   )

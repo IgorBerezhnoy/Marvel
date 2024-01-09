@@ -4,6 +4,8 @@ import { CharacterType } from '@/services/MarvelServiceType'
 export class MarvelService {
   _apiBase = 'https://gateway.marvel.com:443/v1/public/'
   _apiKey = 'apikey=5a3bb599208562ea7f03278e7e459f5e'
+  _baseLimitChars = 9
+  _baseOffsetChars = 210
   _transformCharacter = (res: CharacterType): RandomCharStateType => {
     const { comics, description, id, name, thumbnail, urls } = res
 
@@ -17,9 +19,9 @@ export class MarvelService {
       wiki: urls[1].url,
     }
   }
-  getAllCharacters = async (): Promise<RandomCharStateType[]> => {
+  getAllCharacters = async (offset = this._baseOffsetChars): Promise<RandomCharStateType[]> => {
     const res = await this.getResource(
-      `${this._apiBase}characters?limit=9&offset=210&${this._apiKey}`
+      `${this._apiBase}characters?limit=${this._baseLimitChars}&offset=${offset}&${this._apiKey}`
     )
 
     return res.data.results.map((el: CharacterType) => {

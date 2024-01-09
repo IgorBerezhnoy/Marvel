@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad500217-7d52-4e36-b85e-391907dea352" name="Changes" comment="finished homeWork 151">
-      <change afterPath="$PROJECT_DIR$/src/utils/haveImg.ts" afterDir="false" />
+    <list default="true" id="ad500217-7d52-4e36-b85e-391907dea352" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/errorBoundary/errorBoundary.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/charInfo/CharInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/charInfo/CharInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/charInfo/charInfo.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/charInfo/charInfo.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/charList/CharList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/charList/CharList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/randomChar/RandomChar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/randomChar/RandomChar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/charList/charList.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/charList/charList.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/randomChar/randomChar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/randomChar/randomChar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/MarvelService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/MarvelService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/button.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -127,7 +128,7 @@
       <workItem from="1703417674521" duration="14023000" />
       <workItem from="1703475100605" duration="1121000" />
       <workItem from="1704699055969" duration="19223000" />
-      <workItem from="1704786558477" duration="5457000" />
+      <workItem from="1704786558477" duration="14092000" />
     </task>
     <task id="LOCAL-00001" summary="git commit -m &quot;Initial commit&quot;">
       <option name="closed" value="true" />
@@ -185,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704737743443</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="finished lesson #152">
+      <option name="closed" value="true" />
+      <created>1704796582786</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1704796582786</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +219,7 @@
     <MESSAGE value="finished lesson 150" />
     <MESSAGE value="finished lesson 151" />
     <MESSAGE value="finished homeWork 151" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished homeWork 151" />
+    <MESSAGE value="finished lesson #152" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished lesson #152" />
   </component>
 </project>
