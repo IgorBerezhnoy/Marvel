@@ -3,30 +3,25 @@ import { useEffect, useState } from 'react'
 import { ErrorMessage } from '@/components/errorMessage/errorMessage'
 import { RandomCharStateType } from '@/components/randomChar/RandomChar'
 import Skeleton from '@/components/skeleton/Skeleton'
-import { MarvelService } from '@/services/MarvelService'
+import { useMarvelService } from '@/services/UseMarvelService'
 import { haveImg } from '@/utils/haveImg'
 
 import './charInfo.scss'
 
 const CharInfo = ({ selectedCharId }: Props) => {
-  const marvelService = new MarvelService()
-  const [error, setError] = useState(false)
-  const [loading, setLoading] = useState(true)
+  const { clearError, error, getCharacterById, loading } = useMarvelService()
+
   const [char, setChar] = useState<RandomCharStateType | null>(null)
-  const onChatLoaded = (char: RandomCharStateType) => {
-    setLoading(false)
-    setChar(char)
-  }
-  const onSetError = () => {
-    setLoading(false)
-    setError(true)
-  }
+
   const updateChar = () => {
     if (!selectedCharId) {
       return
     }
-    setLoading(true)
-    marvelService.getCharacterById(selectedCharId).then(onChatLoaded).catch(onSetError)
+    if (error) {
+      clearError()
+    }
+
+    getCharacterById(selectedCharId).then(setChar)
   }
 
   useEffect(() => updateChar(), [selectedCharId])
@@ -34,7 +29,7 @@ const CharInfo = ({ selectedCharId }: Props) => {
   return (
     <div className={'char__info'}>
       {/* eslint-disable-next-line no-nested-ternary */}
-      {loading ? <Skeleton /> : error ? <ErrorMessage /> : <View char={char!} />}
+      {loading ? <Skeleton /> : error ? <ErrorMessage /> : <>{char && <View char={char} />}</>}
     </div>
   )
 }

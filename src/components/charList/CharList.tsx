@@ -2,28 +2,25 @@ import { useEffect, useState } from 'react'
 
 import { Loader } from '@/components/loader/loader'
 import { RandomCharStateType } from '@/components/randomChar/RandomChar'
-import { MarvelService } from '@/services/MarvelService'
+import { useMarvelService } from '@/services/UseMarvelService'
 import { haveImg } from '@/utils/haveImg'
 
 import './charList.scss'
 
 const CharList = ({ onCharSelected }: Props) => {
-  const [loading, setLoading] = useState<boolean>(true)
   const [charsEnd, setCharsEnd] = useState<boolean>(false)
   const [offset, setOffset] = useState<number>(210)
   const [activeItem, setActiveItem] = useState<null | number>(null)
   const [chars, setChars] = useState<RandomCharStateType[]>([])
 
-  const marvelService = new MarvelService()
+  const { getAllCharacters, loading } = useMarvelService()
   const loadMore = () => {
     onRequest(offset)
   }
 
   const onRequest = (offset: number | undefined) => {
-    setLoading(true)
-    marvelService.getAllCharacters(offset).then(res => {
+    getAllCharacters(offset).then(res => {
       setChars(chars => [...chars, ...res])
-      setLoading(false)
       setOffset(offset => offset + 9)
       if (res.length <= 8) {
         setCharsEnd(true)

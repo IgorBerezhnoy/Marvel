@@ -2,31 +2,24 @@ import { useEffect, useState } from 'react'
 
 import { ErrorMessage } from '@/components/errorMessage/errorMessage'
 import { Loader } from '@/components/loader/loader'
-import { MarvelService } from '@/services/MarvelService'
 import { RootObjectDataResultsComics } from '@/services/MarvelServiceType'
+import { useMarvelService } from '@/services/UseMarvelService'
 
 import './randomChar.scss'
 
 import mjolnir from '../../resources/img/mjolnir.png'
 
 const RandomChar = () => {
-  const marvelService = new MarvelService()
-  const [error, setError] = useState(false)
-  const [loading, setLoading] = useState(true)
+  const { clearError, error, getCharacterById, loading } = useMarvelService()
   const [char, setChat] = useState<RandomCharStateType | null>(null)
-  const onChatLoaded = (char: RandomCharStateType) => {
-    setChat(char)
-    setLoading(false)
-  }
-  const onsetError = () => {
-    setError(true)
-    setLoading(false)
-  }
+
   const updateChar = () => {
-    setLoading(true)
+    if (error) {
+      clearError()
+    }
     const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000)
 
-    marvelService.getCharacterById(id).then(onChatLoaded).catch(onsetError)
+    getCharacterById(id).then(setChat)
   }
 
   useEffect(() => {
@@ -43,7 +36,7 @@ const RandomChar = () => {
       ) : error ? (
         <ErrorMessage />
       ) : (
-        <View char={char!} />
+        <>{char && <View char={char} />}</>
       )}
       <div className={'randomchar__static'}>
         <p className={'randomchar__title'}>
