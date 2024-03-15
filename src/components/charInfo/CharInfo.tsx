@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import { useEffect, useState } from 'react'
 
 import { ErrorMessage } from '@/components/errorMessage/errorMessage'
 import { RandomCharStateType } from '@/components/randomChar/RandomChar'
@@ -8,54 +8,35 @@ import { haveImg } from '@/utils/haveImg'
 
 import './charInfo.scss'
 
-class CharInfo extends Component<Props, StateType> {
-  marvelService = new MarvelService()
-  onChatLoaded = (char: RandomCharStateType) => this.setState({ char, loading: false })
-  setError = () => this.setState({ error: true, loading: false })
-  setLoading = (loading: boolean) => this.setState({ loading })
-  state: StateType = {
-    char: {
-      comics: undefined,
-      descr: null,
-      homepage: null,
-      id: null,
-      name: null,
-      thumbnail: null,
-      wiki: null,
-    },
-    error: false,
-    loading: false,
+const CharInfo = ({ selectedCharId }: Props) => {
+  const marvelService = new MarvelService()
+  const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const [char, setChar] = useState<RandomCharStateType | null>(null)
+  const onChatLoaded = (char: RandomCharStateType) => {
+    setLoading(false)
+    setChar(char)
   }
-  updateChar = () => {
-    const { selectedCharId } = this.props
-
+  const onSetError = () => {
+    setLoading(false)
+    setError(true)
+  }
+  const updateChar = () => {
     if (!selectedCharId) {
       return
     }
-    this.setLoading(true)
-    this.marvelService.getCharacterById(selectedCharId).then(this.onChatLoaded).catch(this.setError)
+    setLoading(true)
+    marvelService.getCharacterById(selectedCharId).then(onChatLoaded).catch(onSetError)
   }
 
-  componentDidMount() {
-    this.updateChar()
-  }
+  useEffect(() => updateChar(), [selectedCharId])
 
-  componentDidUpdate(prevProps: Readonly<Props>) {
-    if (this.props.selectedCharId !== prevProps.selectedCharId) {
-      this.updateChar()
-    }
-  }
-
-  render() {
-    const { char, error, loading } = this.state
-
-    return (
-      <div className={'char__info'}>
-        {/* eslint-disable-next-line no-nested-ternary */}
-        {loading ? <Skeleton /> : error ? <ErrorMessage /> : <View char={char} />}
-      </div>
-    )
-  }
+  return (
+    <div className={'char__info'}>
+      {/* eslint-disable-next-line no-nested-ternary */}
+      {loading ? <Skeleton /> : error ? <ErrorMessage /> : <View char={char!} />}
+    </div>
+  )
 }
 
 const View = ({ char }: { char: RandomCharStateType }) => {
@@ -97,7 +78,5 @@ const View = ({ char }: { char: RandomCharStateType }) => {
 }
 
 type Props = { selectedCharId: null | number }
-
-type StateType = { char: RandomCharStateType; error: boolean; loading: boolean }
 
 export default CharInfo

@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import { useEffect, useState } from 'react'
 
 import { ErrorMessage } from '@/components/errorMessage/errorMessage'
 import { Loader } from '@/components/loader/loader'
@@ -9,65 +9,56 @@ import './randomChar.scss'
 
 import mjolnir from '../../resources/img/mjolnir.png'
 
-class RandomChar extends Component<{}, StateType> {
-  marvelService = new MarvelService()
-  onChatLoaded = (char: RandomCharStateType) => this.setState({ char, loading: false })
-  setError = () => this.setState({ error: true, loading: false })
-  setLoading = () => this.setState({ loading: true })
-  state: StateType = {
-    char: {
-      descr: null,
-      homepage: null,
-      id: null,
-      name: null,
-      thumbnail: null,
-      wiki: null,
-    },
-    error: false,
-    loading: true,
+const RandomChar = () => {
+  const marvelService = new MarvelService()
+  const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const [char, setChat] = useState<RandomCharStateType | null>(null)
+  const onChatLoaded = (char: RandomCharStateType) => {
+    setChat(char)
+    setLoading(false)
   }
-
-  updateChar = () => {
-    this.setLoading()
+  const onsetError = () => {
+    setError(true)
+    setLoading(false)
+  }
+  const updateChar = () => {
+    setLoading(true)
     const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000)
 
-    this.marvelService.getCharacterById(id).then(this.onChatLoaded).catch(this.setError)
+    marvelService.getCharacterById(id).then(onChatLoaded).catch(onsetError)
   }
 
-  componentDidMount() {
-    this.updateChar()
-  }
+  useEffect(() => {
+    updateChar()
+  }, [])
 
-  render() {
-    const { char, error, loading } = this.state
-
-    return (
-      <div className={'randomchar'}>
-        {/* eslint-disable-next-line no-nested-ternary */}
-        {loading ? (
-          <div className={'loader'}>
-            <Loader />
-          </div>
-        ) : error ? (
-          <ErrorMessage />
-        ) : (
-          <View char={char} />
-        )}
-        <div className={'randomchar__static'}>
-          <p className={'randomchar__title'}>
-            Random character for today!
-            <br />
-            Do you want to get to know him better?
-          </p>
-          <p className={'randomchar__title'}>Or choose another one</p>
-          <button className={'button button__main'} onClick={() => this.updateChar()}>
-            <div className={'inner'}>try it</div>
-          </button>
-          <img alt={'mjolnir'} className={'randomchar__decoration'} src={mjolnir} />
+  return (
+    <div className={'randomchar'}>
+      {/* eslint-disable-next-line no-nested-ternary */}
+      {loading ? (
+        <div className={'loader'}>
+          <Loader />
         </div>
+      ) : error ? (
+        <ErrorMessage />
+      ) : (
+        <View char={char!} />
+      )}
+      <div className={'randomchar__static'}>
+        <p className={'randomchar__title'}>
+          Random character for today!
+          <br />
+          Do you want to get to know him better?
+        </p>
+        <p className={'randomchar__title'}>Or choose another one</p>
+        <button className={'button button__main'} onClick={() => updateChar()}>
+          <div className={'inner'}>try it</div>
+        </button>
+        <img alt={'mjolnir'} className={'randomchar__decoration'} src={mjolnir} />
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 const View = ({ char }: { char: RandomCharStateType }) => {
@@ -101,8 +92,6 @@ const View = ({ char }: { char: RandomCharStateType }) => {
     </div>
   )
 }
-
-type StateType = { char: RandomCharStateType; error: boolean; loading: boolean }
 
 export default RandomChar
 export type RandomCharStateType = {
