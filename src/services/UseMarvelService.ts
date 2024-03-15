@@ -1,6 +1,6 @@
 import { RandomCharStateType } from '@/components/randomChar/RandomChar'
 import { useHttp } from '@/hooks/http.hook'
-import { CharacterType } from '@/services/MarvelServiceType'
+import { CharacterType, ComicsType, RootComics } from '@/services/MarvelServiceType'
 
 export const useMarvelService = () => {
   const { clearError, error, loading, request } = useHttp()
@@ -23,6 +23,16 @@ export const useMarvelService = () => {
       wiki: urls[1].url,
     }
   }
+  const _transformCocmic = (res: RootComics): ComicsType => {
+    const { id, prices, thumbnail, title } = res
+
+    return {
+      id,
+      prices: prices[0],
+      thumbnail: thumbnail.path + '.' + thumbnail.extension,
+      title,
+    }
+  }
   const getAllCharacters = async (offset = _baseOffsetChars): Promise<RandomCharStateType[]> => {
     const res = await request(
       `${_apiBase}characters?limit=${_baseLimitChars}&offset=${offset}&${_apiKey}`
@@ -33,11 +43,18 @@ export const useMarvelService = () => {
     })
   }
 
+  const getAllComics = async (offset = _baseLimitComics): Promise<ComicsType[]> => {
+    const res = await request(
+      `${_apiBase}comics?limit=${_baseLimitComics}&offset=${offset}&${_apiKey}`
+    )
+
+    return res.data.results.map((el: RootComics) => _transformCocmic(el))
+  }
   const getCharacterById = async (id: number): Promise<RandomCharStateType> => {
     const res = await request(`${_apiBase}characters/${id}?${_apiKey}`)
 
     return _transformCharacter(res.data.results[0])
   }
 
-  return { clearError, error, getAllCharacters, getCharacterById, loading }
+  return { clearError, error, getAllCharacters, getAllComics, getCharacterById, loading }
 }

@@ -72,3 +72,104 @@ export type GetCharactersResponseType = {
   etag: string
   status: string
 }
+
+export type ComicsType = {
+  id: number
+  prices: RootComicsPrices
+  thumbnail: string
+  title: string
+}
+export type RootComics = {
+  characters: RootComicsCharacters
+  collectedIssues: any[]
+  collections: any[]
+  creators: RootComicsCreators
+  dates: RootComicsDates[]
+  description: string
+  diamondCode: string
+  digitalId: number
+  ean: string
+  events: RootComicsEvents
+  format: string
+  id: number
+  images: RootComicsImages[]
+  isbn: string
+  issn: string
+  issueNumber: number
+  modified: string
+  pageCount: number
+  prices: RootComicsPrices[]
+  resourceURI: string
+  series: RootComicsSeries
+  stories: RootComicsStories
+  textObjects: RootComicsTextObjects[]
+  thumbnail: RootComicsThumbnail
+  title: string
+  upc: string
+  urls: RootComicsUrls[]
+  variantDescription: string
+  variants: any[]
+}
+export type RootComicsTextObjects = {
+  language: string
+  text: string
+  type: string
+}
+export type RootComicsUrls = {
+  type: string
+  url: string
+}
+export type RootComicsSeries = {
+  name: string
+  resourceURI: string
+}
+export type RootComicsDates = {
+  date: string
+  type: string
+}
+export type RootComicsPrices = {
+  price: number
+  type: string
+}
+export type RootComicsThumbnail = {
+  extension: string
+  path: string
+}
+export type RootComicsImages = {
+  extension: string
+  path: string
+}
+export type RootComicsCreatorsItems = {
+  name: string
+  resourceURI: string
+  role: string
+}
+export type RootComicsCreators = {
+  available: number
+  collectionURI: string
+  items: RootComicsCreatorsItems[]
+  returned: number
+}
+export type RootComicsCharacters = {
+  available: number
+  collectionURI: string
+  items: any[]
+  returned: number
+}
+export type RootComicsStoriesItems = {
+  name: string
+  resourceURI: string
+  type: string
+}
+export type RootComicsStories = {
+  available: number
+  collectionURI: string
+  items: RootComicsStoriesItems[]
+  returned: number
+}
+export type RootComicsEvents = {
+  available: number
+  collectionURI: string
+  items: any[]
+  returned: number
+}
