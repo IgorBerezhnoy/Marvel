@@ -9,44 +9,62 @@ import './comicsList.scss'
 const ComicsList = () => {
   const [comics, setComics] = useState<ComicsType[]>([])
   const { getAllComics, loading } = useMarvelService()
+  const [offset, setOffset] = useState<number>(16)
+  const [comicsEnd, setComicsEnd] = useState<boolean>(false)
 
   useEffect(() => {
     getAllComics().then(res => {
-      console.log(res)
       setComics(res)
     })
   }, [])
+
+  const loadMore = () => {
+    onRequest(offset)
+  }
+
+  const onRequest = (offset: number | undefined) => {
+    getAllComics(offset).then(res => {
+      setComics(comics => [...comics, ...res])
+      setOffset(offset => offset + 8)
+      if (res.length <= 8) {
+        setComicsEnd(true)
+      }
+    })
+  }
 
   return (
     <>
       <img alt={'Banner'} src={'/Banner.png'} />
       <div className={'comics__list'}>
         <ul className={'comics__grid'}>
-          {comics &&
-            comics.map(el => (
-              <li className={'comics__item'}>
-                <a href={'#'}>
-                  <img
-                    alt={'comics ' + el.title}
-                    className={'comics__item-img'}
-                    src={el.thumbnail}
-                  />
-                  <div className={'comics__item-name'}>{el.title}</div>
-                  <div className={'comics__item-price'}>{el.prices.price + '$'}</div>
-                </a>
-              </li>
-            ))}
+          {comics && comics.map(el => <ComicsItem key={el.id} {...el} />)}
         </ul>
         {loading && (
           <div className={'comics__loading'}>
             <Loader />
           </div>
         )}
-        <button className={'button button__main button__long'}>
-          <div className={'inner'}>load more</div>
-        </button>
+        {comicsEnd ? (
+          <div className={'comics-end'}>Sorry, the heroes are over</div>
+        ) : (
+          <button className={'button button__main button__long'} onClick={loadMore}>
+            <div className={'inner'}>load more</div>
+          </button>
+        )}
       </div>
     </>
+  )
+}
+
+const ComicsItem = ({ prices, thumbnail, title }: ComicsType) => {
+  return (
+    <li className={'comics__item'}>
+      <a href={'#'}>
+        <img alt={'comics ' + title} className={'comics__item-img'} src={thumbnail} />
+        <div className={'comics__item-name'}>{title}</div>
+        <div className={'comics__item-price'}>{prices.price + '$'}</div>
+      </a>
+    </li>
   )
 }
 
