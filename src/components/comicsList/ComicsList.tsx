@@ -34,10 +34,9 @@ const ComicsList = () => {
 
   return (
     <>
-      <img alt={'Banner'} src={'/Banner.png'} />
       <div className={'comics__list'}>
         <ul className={'comics__grid'}>
-          {comics && comics.map(el => <ComicsItem key={el.id} {...el} />)}
+          {comics && comics.map(el => <ComicsItem key={el.id + el.title} {...el} />)}
         </ul>
         {loading && (
           <div className={'comics__loading'}>

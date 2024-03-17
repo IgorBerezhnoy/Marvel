@@ -36,21 +36,8 @@ const CharList = ({ onCharSelected }: Props) => {
     onCharSelected(id)
   }
 
-  const charItems = chars.map(el => (
-    <li
-      className={`char__item  ${activeItem === el.id ? 'char__item_selected' : ''}`}
-      key={el.id}
-      onClick={() => onSetActiveItem(el.id)}
-      onKeyDown={e => {
-        if (e.key === ' ' || e.key === 'Enter') {
-          onSetActiveItem(el.id)
-        }
-      }}
-      tabIndex={0}
-    >
-      <img alt={'abyss'} src={el.thumbnail ?? ''} style={haveImg(el.thumbnail!)} />
-      <div className={'char__name'}>{el.name}</div>
-    </li>
+  const charItems = chars.map((el, index) => (
+    <CharItem key={index} {...el} activeItem={activeItem} onSetActiveItem={onSetActiveItem} />
   ))
 
   return (
@@ -79,3 +66,29 @@ const CharList = ({ onCharSelected }: Props) => {
 export default CharList
 
 type Props = { onCharSelected: (id: null | number) => void }
+const CharItem = ({
+  activeItem,
+  id,
+  name,
+  onSetActiveItem,
+  thumbnail,
+}: RandomCharStateType & ActiveItemType) => {
+  return (
+    <li
+      className={`char__item  ${activeItem === id ? 'char__item_selected' : ''}`}
+      key={id}
+      onClick={() => onSetActiveItem(id)}
+      onKeyDown={e => {
+        if (e.key === ' ' || e.key === 'Enter') {
+          onSetActiveItem(id)
+        }
+      }}
+      tabIndex={0}
+    >
+      <img alt={'abyss'} src={thumbnail ?? ''} style={haveImg(thumbnail!)} />
+      <div className={'char__name'}>{name}</div>
+    </li>
+  )
+}
+
+type ActiveItemType = { activeItem: null | number; onSetActiveItem: (id: null | number) => void }
