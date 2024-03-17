@@ -74,8 +74,11 @@ export type GetCharactersResponseType = {
 }
 
 export type ComicsType = {
+  description: string
   id: number
-  prices: RootComicsPrices
+  language: string
+  pageCount: number
+  prices: number
   thumbnail: string
   title: string
 }

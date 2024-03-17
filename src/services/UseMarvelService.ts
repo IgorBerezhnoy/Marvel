@@ -23,12 +23,15 @@ export const useMarvelService = () => {
       wiki: urls[1].url,
     }
   }
-  const _transformCocmic = (res: RootComics): ComicsType => {
-    const { id, prices, thumbnail, title } = res
+  const _transformComics = (res: RootComics): ComicsType => {
+    const { description, id, pageCount, prices, textObjects, thumbnail, title } = res
 
     return {
+      description: description || textObjects[0]?.text,
       id,
-      prices: prices[0],
+      language: textObjects[0]?.language ?? '',
+      pageCount,
+      prices: prices[0].price,
       thumbnail: thumbnail.path + '.' + thumbnail.extension,
       title,
     }
@@ -48,13 +51,26 @@ export const useMarvelService = () => {
       `${_apiBase}comics?limit=${_baseLimitComics}&offset=${offset}&${_apiKey}`
     )
 
-    return res.data.results.map((el: RootComics) => _transformCocmic(el))
+    return res.data.results.map((el: RootComics) => _transformComics(el))
   }
   const getCharacterById = async (id: number): Promise<RandomCharStateType> => {
     const res = await request(`${_apiBase}characters/${id}?${_apiKey}`)
 
     return _transformCharacter(res.data.results[0])
   }
+  const getComicsById = async (id: number): Promise<ComicsType> => {
+    const res = await request(`${_apiBase}comics/${id}?${_apiKey}`)
 
-  return { clearError, error, getAllCharacters, getAllComics, getCharacterById, loading }
+    return _transformComics(res.data.results[0])
+  }
+
+  return {
+    clearError,
+    error,
+    getAllCharacters,
+    getAllComics,
+    getCharacterById,
+    getComicsById,
+    loading,
+  }
 }

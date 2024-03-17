@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Loader } from '@/components/loader/loader'
 import { ComicsType } from '@/services/MarvelServiceType'
@@ -26,7 +27,7 @@ const ComicsList = () => {
     getAllComics(offset).then(res => {
       setComics(comics => [...comics, ...res])
       setOffset(offset => offset + 8)
-      if (res.length <= 8) {
+      if (res.length < 8) {
         setComicsEnd(true)
       }
     })
@@ -55,14 +56,14 @@ const ComicsList = () => {
   )
 }
 
-const ComicsItem = ({ prices, thumbnail, title }: ComicsType) => {
+const ComicsItem = ({ id, prices, thumbnail, title }: ComicsType) => {
   return (
     <li className={'comics__item'}>
-      <a href={'#'}>
+      <Link to={'/comics/' + id}>
         <img alt={'comics ' + title} className={'comics__item-img'} src={thumbnail} />
         <div className={'comics__item-name'}>{title}</div>
-        <div className={'comics__item-price'}>{prices.price + '$'}</div>
-      </a>
+        <div className={'comics__item-price'}>{prices + '$'}</div>
+      </Link>
     </li>
   )
 }
