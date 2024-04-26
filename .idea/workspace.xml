@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad500217-7d52-4e36-b85e-391907dea352" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/dist/Banner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/assets/Avengers-fi4QhQ7L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/assets/Avengers_logo-KkLUbKG_.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/assets/index-_STbZCyh.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/assets/index-wsCBG-vk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hoc/SuspensWithBoundary.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index-U_4eqoKJ.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/index-m5hArIlV.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/vite.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/404.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ComicsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ComicsPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SingleComicsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SingleComicPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JSX File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -205,7 +192,7 @@
       <workItem from="1711548844708" duration="1417000" />
       <workItem from="1711614198283" duration="587000" />
       <workItem from="1711616656650" duration="1921000" />
-      <workItem from="1714129262887" duration="339000" />
+      <workItem from="1714129262887" duration="3044000" />
     </task>
     <task id="LOCAL-00001" summary="git commit -m &quot;Initial commit&quot;">
       <option name="closed" value="true" />
@@ -335,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710676677923</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Less-182 [feat]: added lazy components">
+      <option name="closed" value="true" />
+      <created>1714129783073</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1714129783073</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,6 +368,7 @@
     <MESSAGE value="[feat] added button show more" />
     <MESSAGE value="[feat] added react router dom" />
     <MESSAGE value="[feat] added dynamic routes and added page 404" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat] added dynamic routes and added page 404" />
+    <MESSAGE value="Less-182 [feat]: added lazy components" />
+    <option name="LAST_COMMIT_MESSAGE" value="Less-182 [feat]: added lazy components" />
   </component>
 </project>

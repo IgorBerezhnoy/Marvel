@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import { Loader } from '@/components/loader/loader'
+import { SuspenseWithBoundary } from '@/hoc/SuspenseWithBoundary'
 
 import AppHeader from '../appHeader/AppHeader'
 
@@ -18,10 +19,38 @@ export const App = () => {
         <main>
           <Suspense fallback={<Loader />}>
             <Routes>
-              <Route element={<ComicsPage />} path={'/comics'} />
-              <Route element={<SingleComicPage />} path={'/comics/:id'} />
-              <Route element={<MainPage />} path={'/'} />
-              <Route element={<Page404 />} path={'*'} />
+              <Route
+                element={
+                  <SuspenseWithBoundary>
+                    <ComicsPage />
+                  </SuspenseWithBoundary>
+                }
+                path={'/comics'}
+              />
+              <Route
+                element={
+                  <SuspenseWithBoundary>
+                    <SingleComicPage />
+                  </SuspenseWithBoundary>
+                }
+                path={'/comics/:id'}
+              />
+              <Route
+                element={
+                  <SuspenseWithBoundary>
+                    <MainPage />
+                  </SuspenseWithBoundary>
+                }
+                path={'/'}
+              />
+              <Route
+                element={
+                  <SuspenseWithBoundary>
+                    <Page404 />
+                  </SuspenseWithBoundary>
+                }
+                path={'*'}
+              />
             </Routes>
           </Suspense>
         </main>
