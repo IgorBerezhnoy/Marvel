@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react'
+import { lazy, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import { Loader } from '@/components/loader/loader'
-import { Page404 } from '@/pages/404'
 import { ComicsType } from '@/services/MarvelServiceType'
 import { useMarvelService } from '@/services/UseMarvelService'
 
 import './singleComic.scss'
 
-export const SingleComicPage = () => {
+const SingleComicPage = () => {
+  const Page404 = lazy(() => import('@/pages/404'))
+
   const [comics, setComics] = useState<ComicsType>({} as ComicsType)
   const { error, getComicsById, loading } = useMarvelService()
   const { id } = useParams()
@@ -49,3 +50,5 @@ export const SingleComicPage = () => {
     </div>
   )
 }
+
+export default SingleComicPage
