@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 
 import AppBanner from '@/components/appBanner/AppBanner'
@@ -22,8 +23,12 @@ export const ComicOrCharPage = ({
           <Loader />
         ) : (
           <>
+            <Helmet>
+              <meta content={`Page about ${title ?? name}`} name={'description'} />
+              <title>{title ?? name}</title>
+            </Helmet>
             <img
-              alt={title}
+              alt={title ?? name}
               className={'single-comic__img'}
               src={thumbnail}
               style={haveImg(thumbnail!)}

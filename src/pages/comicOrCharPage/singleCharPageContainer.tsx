@@ -21,7 +21,7 @@ const SingleCharPageContainer = () => {
         setChar(res)
       })
     }
-  }, [getCharacterById, id])
+  }, [id])
   if (error) {
     return <Page404 />
   }

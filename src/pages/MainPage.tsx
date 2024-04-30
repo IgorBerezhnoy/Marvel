@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { Helmet } from 'react-helmet'
 
 import CharInfo from '@/components/charInfo/CharInfo'
 import CharList from '@/components/charList/CharList'
@@ -6,13 +7,16 @@ import { ErrorBoundary } from '@/components/errorBoundary/errorBoundary'
 import RandomChar from '@/components/randomChar/RandomChar'
 import { SearchChar } from '@/components/searchChar/searchChar'
 import decoration from '@/resources/img/Vision.png'
-
 const MainPage = () => {
   const initialState = Math.floor(Math.random() * (1011400 - 1011000) + 1011000)
   const [charSelected, setCharSelected] = useState<null | number>(initialState)
 
   return (
     <>
+      <Helmet>
+        <meta content={'Marvel information portal'} name={'description'} />
+        <title>Marvel information portal</title>
+      </Helmet>
       <ErrorBoundary>
         <RandomChar />
       </ErrorBoundary>
