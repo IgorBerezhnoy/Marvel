@@ -1,4 +1,5 @@
 import { FormEvent, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { ErrorMessage } from '@/components/errorMessage/errorMessage'
 import { Loader } from '@/components/loader/loader'
@@ -33,6 +34,14 @@ export const SearchChar = () => {
 
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
+      <View char={char} error={error} isFounded={isFounded} loading={loading} />
+    </Formik>
+  )
+}
+
+const View = ({ char, error, isFounded, loading }: Props) => {
+  return (
+    <>
       {error ? (
         <ErrorMessage />
       ) : (
@@ -63,16 +72,26 @@ export const SearchChar = () => {
             {char && (
               <>
                 <div className={'search__error'}>{`There is! Visit ${char?.name} page?`}</div>
-                <button className={'button button__secondary button-page'}>
+                <Link
+                  className={'button button__secondary button-page'}
+                  to={'/character/' + char.id}
+                >
                   <div className={'inner'}>TO PAGE</div>
-                </button>
+                </Link>
               </>
             )}
           </div>
           {loading && <Loader className={'search__loader'} />}
         </Form>
       )}
-    </Formik>
+    </>
   )
 }
+
 type SearchForm = FormEvent<HTMLFormElement> & { search: string }
+type Props = {
+  char: CharacterType | null
+  error: null | string
+  isFounded: boolean | null
+  loading: boolean
+}

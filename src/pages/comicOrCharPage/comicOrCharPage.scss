@@ -1,4 +1,4 @@
-@import '../style/variables';
+@import '../../style/variables';
 
 .single-comic {
   margin-top: 50px;
@@ -7,6 +7,7 @@
   column-gap: 50px;
   align-items: start;
   &__img {
+    object-fit: cover;
     width: 293px;
     height: 450px;
   }

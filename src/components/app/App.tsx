@@ -9,7 +9,12 @@ import AppHeader from '../appHeader/AppHeader'
 export const App = () => {
   const Page404 = lazy(() => import('@/pages/404'))
   const MainPage = lazy(() => import('@/pages/MainPage'))
-  const SingleComicPage = lazy(() => import('@/pages/SingleComicPage'))
+  const SingleComicPageContainer = lazy(
+    () => import('@/pages/comicOrCharPage/singleComicPageContainer')
+  )
+  const SingleCharPageContainer = lazy(
+    () => import('@/pages/comicOrCharPage/singleCharPageContainer')
+  )
   const ComicsPage = lazy(() => import('@/pages/ComicsPage'))
 
   return (
@@ -30,10 +35,18 @@ export const App = () => {
               <Route
                 element={
                   <SuspenseWithBoundary>
-                    <SingleComicPage />
+                    <SingleComicPageContainer />
                   </SuspenseWithBoundary>
                 }
                 path={'/comics/:id'}
+              />
+              <Route
+                element={
+                  <SuspenseWithBoundary>
+                    <SingleCharPageContainer />
+                  </SuspenseWithBoundary>
+                }
+                path={'/character/:id'}
               />
               <Route
                 element={

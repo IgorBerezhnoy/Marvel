@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad500217-7d52-4e36-b85e-391907dea352" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/searchChar/searchChar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/searchChar/searchChar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/comicOrCharPage/comicOrCharPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/comicOrCharPage/singleCharPageContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/comicOrCharPage/singleComicPageContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loader/loader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/loader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/UseMarvelService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/UseMarvelService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/searchChar/searchChar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/searchChar/searchChar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/searchChar/searchChar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/searchChar/searchChar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SingleComicPage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/singleComic.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/comicOrCharPage/comicOrCharPage.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +75,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -93,7 +94,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/programing_2.0/_udemy/JS+React/chapter_6_midle_React/marvel/vite-project/src/components",
+    "last_opened_file_path": "D:/programing_2.0/_udemy/JS+React/chapter_6_midle_React/marvel/vite-project/src/pages/comicOrCharPage",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.stylelint": "true",
@@ -114,16 +115,21 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\programing_2.0\_udemy\JS+React\chapter_6_midle_React\marvel\vite-project\src\pages\comicOrCharPage" />
       <recent name="D:\programing_2.0\_udemy\JS+React\chapter_6_midle_React\marvel\vite-project\src\components" />
       <recent name="D:\programing_2.0\_udemy\JS+React\chapter_6_midle_React\marvel\vite-project\src\pages" />
       <recent name="D:\programing_2.0\_udemy\JS+React\chapter_6_midle_React\marvel\vite-project\public" />
       <recent name="D:\programing_2.0\udemy\JS+React\chapter_6_midle_React\marvel\vite-project\src\components\errorMessage" />
-      <recent name="D:\programing_2.0\udemy\JS+React\chapter_6_midle_React\marvel\vite-project\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\programing_2.0\_udemy\JS+React\chapter_6_midle_React\marvel\vite-project\src\pages\comicOrCharPage" />
+      <recent name="D:\programing_2.0\_udemy\JS+React\chapter_6_midle_React\marvel\vite-project\src\pages\singlComicPage" />
       <recent name="D:\programing_2.0\_udemy\JS+React\chapter_6_midle_React\marvel\vite-project\src\pages" />
       <recent name="D:\programing_2.0\udemy\JS+React\chapter_6_midle_React\marvel\vite-project\src\components\errorMessage" />
       <recent name="D:\programing_2.0\udemy\JS+React\chapter_6_midle_React\marvel\vite-project\src" />
+    </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="D:\programing_2.0\_udemy\JS+React\chapter_6_midle_React\marvel\vite-project\src\pages\singleComicPage\View.tsx" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -199,7 +205,7 @@
       <workItem from="1711616656650" duration="1921000" />
       <workItem from="1714129262887" duration="4483000" />
       <workItem from="1714402700248" duration="724000" />
-      <workItem from="1714472589011" duration="8255000" />
+      <workItem from="1714472589011" duration="11765000" />
     </task>
     <task id="LOCAL-00001" summary="git commit -m &quot;Initial commit&quot;">
       <option name="closed" value="true" />
@@ -353,7 +359,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714132411699</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Less-184 [feat]: created search">
+      <option name="closed" value="true" />
+      <created>1714485630409</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1714485630409</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -395,6 +409,7 @@
     <MESSAGE value="Less-182 [feat]: added SuspensWithBoundary.tsx" />
     <MESSAGE value="Less-182 [feat]: added SuspenseWithBoundary" />
     <MESSAGE value="Less-182 [feat]: added favicon" />
-    <option name="LAST_COMMIT_MESSAGE" value="Less-182 [feat]: added favicon" />
+    <MESSAGE value="Less-184 [feat]: created search" />
+    <option name="LAST_COMMIT_MESSAGE" value="Less-184 [feat]: created search" />
   </component>
 </project>
