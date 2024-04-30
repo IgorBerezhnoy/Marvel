@@ -45,6 +45,11 @@ export const useMarvelService = () => {
       return _transformCharacter(el)
     })
   }
+  const getCharacterByName = async (nameStartsWith: string): Promise<CharacterType> => {
+    const res = await request(`${_apiBase}characters?nameStartsWith=${nameStartsWith}&${_apiKey}`)
+
+    return res.data.results[0]
+  }
 
   const getAllComics = async (offset = _baseLimitComics): Promise<ComicsType[]> => {
     const res = await request(
@@ -70,6 +75,7 @@ export const useMarvelService = () => {
     getAllCharacters,
     getAllComics,
     getCharacterById,
+    getCharacterByName,
     getComicsById,
     loading,
   }

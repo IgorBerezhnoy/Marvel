@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad500217-7d52-4e36-b85e-391907dea352" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hoc/SuspensWithBoundary.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/searchChar/searchChar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/searchChar/searchChar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loader/loader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/loader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/UseMarvelService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/UseMarvelService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,38 +87,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/programing_2.0/_udemy/JS+React/chapter_6_midle_React/marvel/vite-project/src/pages&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;D:\\programing_2.0\\udemy\\JS+React\\chapter_6_midle_React\\marvel\\vite-project\\node_modules\\stylelint&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.preview.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\programing_2.0\\_udemy\\JS+React\\chapter_6_midle_React\\marvel\\vite-project\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\programing_2.0\\_udemy\\JS+React\\chapter_6_midle_React\\marvel\\vite-project\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/programing_2.0/_udemy/JS+React/chapter_6_midle_React/marvel/vite-project/src/components",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.stylelint": "D:\\programing_2.0\\udemy\\JS+React\\chapter_6_midle_React\\marvel\\vite-project\\node_modules\\stylelint",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
+    "npm.dev.executor": "Run",
+    "npm.preview.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "D:\\programing_2.0\\_udemy\\JS+React\\chapter_6_midle_React\\marvel\\vite-project\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "ts.external.directory.path": "D:\\programing_2.0\\_udemy\\JS+React\\chapter_6_midle_React\\marvel\\vite-project\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\programing_2.0\_udemy\JS+React\chapter_6_midle_React\marvel\vite-project\src\components" />
       <recent name="D:\programing_2.0\_udemy\JS+React\chapter_6_midle_React\marvel\vite-project\src\pages" />
       <recent name="D:\programing_2.0\_udemy\JS+React\chapter_6_midle_React\marvel\vite-project\public" />
       <recent name="D:\programing_2.0\udemy\JS+React\chapter_6_midle_React\marvel\vite-project\src\components\errorMessage" />
       <recent name="D:\programing_2.0\udemy\JS+React\chapter_6_midle_React\marvel\vite-project\public" />
-      <recent name="D:\programing_2.0\udemy\JS+React\chapter_6_midle_React\marvel\vite-project\src\components\loader" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\programing_2.0\_udemy\JS+React\chapter_6_midle_React\marvel\vite-project\src\pages" />
@@ -192,7 +197,9 @@
       <workItem from="1711548844708" duration="1417000" />
       <workItem from="1711614198283" duration="587000" />
       <workItem from="1711616656650" duration="1921000" />
-      <workItem from="1714129262887" duration="3044000" />
+      <workItem from="1714129262887" duration="4483000" />
+      <workItem from="1714402700248" duration="724000" />
+      <workItem from="1714472589011" duration="8255000" />
     </task>
     <task id="LOCAL-00001" summary="git commit -m &quot;Initial commit&quot;">
       <option name="closed" value="true" />
@@ -330,7 +337,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714129783073</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Less-182 [feat]: added SuspenseWithBoundary">
+      <option name="closed" value="true" />
+      <created>1714132392252</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1714132392252</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Less-182 [feat]: added favicon">
+      <option name="closed" value="true" />
+      <created>1714132411699</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1714132411699</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,6 +392,9 @@
     <MESSAGE value="[feat] added react router dom" />
     <MESSAGE value="[feat] added dynamic routes and added page 404" />
     <MESSAGE value="Less-182 [feat]: added lazy components" />
-    <option name="LAST_COMMIT_MESSAGE" value="Less-182 [feat]: added lazy components" />
+    <MESSAGE value="Less-182 [feat]: added SuspensWithBoundary.tsx" />
+    <MESSAGE value="Less-182 [feat]: added SuspenseWithBoundary" />
+    <MESSAGE value="Less-182 [feat]: added favicon" />
+    <option name="LAST_COMMIT_MESSAGE" value="Less-182 [feat]: added favicon" />
   </component>
 </project>
