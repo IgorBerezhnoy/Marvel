@@ -13,7 +13,7 @@ const CharList = ({ onCharSelected }: Props) => {
   const [activeItem, setActiveItem] = useState<null | number>(null)
   const [chars, setChars] = useState<RandomCharStateType[]>([])
 
-  const { getAllCharacters, loading } = useMarvelService()
+  const { getAllCharacters, process } = useMarvelService()
   const loadMore = () => {
     onRequest(offset)
   }
@@ -40,10 +40,12 @@ const CharList = ({ onCharSelected }: Props) => {
     <CharItem key={index} {...el} activeItem={activeItem} onSetActiveItem={onSetActiveItem} />
   ))
 
+  const isLoading = process === 'loading' || process === 'waiting'
+
   return (
     <div className={'char__list'}>
       <ul className={'char__grid'}>{charItems}</ul>
-      {loading && (
+      {isLoading && (
         <div className={'loader'}>
           <Loader />
         </div>
@@ -53,7 +55,7 @@ const CharList = ({ onCharSelected }: Props) => {
       ) : (
         <button
           className={'button button__main button__long'}
-          disabled={loading}
+          disabled={isLoading}
           onClick={() => loadMore()}
         >
           <div className={'inner'}>load more</div>

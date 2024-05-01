@@ -9,7 +9,7 @@ import './comicsList.scss'
 
 const ComicsList = () => {
   const [comics, setComics] = useState<ComicsType[]>([])
-  const { getAllComics, loading } = useMarvelService()
+  const { getAllComics, process } = useMarvelService()
   const [offset, setOffset] = useState<number>(16)
   const [comicsEnd, setComicsEnd] = useState<boolean>(false)
 
@@ -32,6 +32,7 @@ const ComicsList = () => {
       }
     })
   }
+  const isLoading = process === 'loading' || process === 'waiting'
 
   return (
     <>
@@ -39,7 +40,7 @@ const ComicsList = () => {
         <ul className={'comics__grid'}>
           {comics && comics.map(el => <ComicsItem key={el.id + el.title} {...el} />)}
         </ul>
-        {loading && (
+        {isLoading && (
           <div className={'comics__loading'}>
             <Loader />
           </div>

@@ -3,6 +3,7 @@ import { useCallback, useState } from 'react'
 export const useHttp = () => {
   const [error, setError] = useState<null | string>(null)
   const [loading, setLoading] = useState<boolean>(false)
+  const [process, setProcess] = useState<ProcessType>('waiting')
   const request = useCallback(
     async (
       url: string,
@@ -11,6 +12,7 @@ export const useHttp = () => {
       headers = { 'Content-Type': 'application/json' }
     ) => {
       setLoading(true)
+      setProcess('loading')
       try {
         const response = await fetch(url, { body, headers, method })
 
@@ -20,6 +22,7 @@ export const useHttp = () => {
         const data = await response.json()
 
         setLoading(false)
+        setProcess('confirmed')
 
         return data
       } catch (e: unknown) {
@@ -27,13 +30,19 @@ export const useHttp = () => {
 
         setLoading(false)
         setError(err.message)
+        setProcess('error')
+
         throw e
       }
     },
     []
   )
-  const clearError = () => setError(null)
+  const clearError = () => {
+    setProcess('loading')
+    setError(null)
+  }
 
-  return { clearError, error, loading, request }
+  return { clearError, error, loading, process, request }
 }
 type MethodHttp = 'DELETE' | 'GET' | 'PATCH' | 'POST' | 'PUT'
+export type ProcessType = 'confirmed' | 'error' | 'loading' | 'waiting'

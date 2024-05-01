@@ -1,22 +1,18 @@
 import { useEffect, useState } from 'react'
 
-import { ErrorMessage } from '@/components/errorMessage/errorMessage'
-import { Loader } from '@/components/loader/loader'
 import { RootObjectDataResultsComics } from '@/services/MarvelServiceType'
 import { useMarvelService } from '@/services/UseMarvelService'
+import { setRandomChar } from '@/utils/setContent'
 
 import './randomChar.scss'
 
 import mjolnir from '../../resources/img/mjolnir.png'
 
 const RandomChar = () => {
-  const { clearError, error, getCharacterById, loading } = useMarvelService()
+  const { getCharacterById, process } = useMarvelService()
   const [char, setChat] = useState<RandomCharStateType | null>(null)
 
   const updateChar = () => {
-    if (error) {
-      clearError()
-    }
     const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000)
 
     getCharacterById(id).then(setChat)
@@ -25,19 +21,11 @@ const RandomChar = () => {
   useEffect(() => {
     updateChar()
   }, [])
+  const view = setRandomChar(process, <>{char && <View char={char} />}</>)
 
   return (
     <div className={'randomchar'}>
-      {/* eslint-disable-next-line no-nested-ternary */}
-      {loading ? (
-        <div className={'loader'}>
-          <Loader />
-        </div>
-      ) : error ? (
-        <ErrorMessage />
-      ) : (
-        <>{char && <View char={char} />}</>
-      )}
+      {view}
       <div className={'randomchar__static'}>
         <p className={'randomchar__title'}>
           Random character for today!

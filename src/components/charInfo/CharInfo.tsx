@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react'
 
-import { ErrorMessage } from '@/components/errorMessage/errorMessage'
 import { RandomCharStateType } from '@/components/randomChar/RandomChar'
-import Skeleton from '@/components/skeleton/Skeleton'
 import { useMarvelService } from '@/services/UseMarvelService'
 import { haveImg } from '@/utils/haveImg'
+import { setContent } from '@/utils/setContent'
 
 import './charInfo.scss'
 
 const CharInfo = ({ selectedCharId }: Props) => {
-  const { clearError, error, getCharacterById, loading } = useMarvelService()
+  const { getCharacterById, process } = useMarvelService()
 
   const [char, setChar] = useState<RandomCharStateType | null>(null)
 
@@ -17,21 +16,15 @@ const CharInfo = ({ selectedCharId }: Props) => {
     if (!selectedCharId) {
       return
     }
-    if (error) {
-      clearError()
-    }
 
     getCharacterById(selectedCharId).then(setChar)
   }
 
   useEffect(() => updateChar(), [selectedCharId])
 
-  return (
-    <div className={'char__info'}>
-      {/* eslint-disable-next-line no-nested-ternary */}
-      {loading ? <Skeleton /> : error ? <ErrorMessage /> : <>{char && <View char={char} />}</>}
-    </div>
-  )
+  const view = setContent(process, <>{char && <View char={char} />}</>)
+
+  return <div className={'char__info'}>{view}</div>
 }
 
 const View = ({ char }: { char: RandomCharStateType }) => {
