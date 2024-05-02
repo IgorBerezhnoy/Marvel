@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad500217-7d52-4e36-b85e-391907dea352" name="Changes" comment="">
+    <list default="true" id="ad500217-7d52-4e36-b85e-391907dea352" name="Changes" comment="Less-187 [feat]: added setContent">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/randomChar/RandomChar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/randomChar/RandomChar.tsx" afterDir="false" />
     </list>
@@ -201,6 +201,7 @@
       <workItem from="1714472589011" duration="14858000" />
       <workItem from="1714536117545" duration="4373000" />
       <workItem from="1714576241369" duration="4389000" />
+      <workItem from="1714642872469" duration="844000" />
     </task>
     <task id="LOCAL-00001" summary="git commit -m &quot;Initial commit&quot;">
       <option name="closed" value="true" />
