@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad500217-7d52-4e36-b85e-391907dea352" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils/setContent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/charInfo/CharInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/charInfo/CharInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/charList/CharList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/charList/CharList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/comicsList/ComicsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/comicsList/ComicsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loader/loader.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/loader.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/randomChar/RandomChar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/randomChar/RandomChar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/http.hook.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/http.hook.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/UseMarvelService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/UseMarvelService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +200,7 @@
       <workItem from="1714402700248" duration="724000" />
       <workItem from="1714472589011" duration="14858000" />
       <workItem from="1714536117545" duration="4373000" />
-      <workItem from="1714576241369" duration="1535000" />
+      <workItem from="1714576241369" duration="4389000" />
     </task>
     <task id="LOCAL-00001" summary="git commit -m &quot;Initial commit&quot;">
       <option name="closed" value="true" />
@@ -385,7 +378,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714495317861</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Less-187 [feat]: added setContent">
+      <option name="closed" value="true" />
+      <created>1714578883576</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1714578883576</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,6 +431,7 @@
     <MESSAGE value="Less-184 [feat]: created search" />
     <MESSAGE value="Less-184 [feat]: created page for singleChar" />
     <MESSAGE value="Less-185-186 [feat]: added Meta tags" />
-    <option name="LAST_COMMIT_MESSAGE" value="Less-185-186 [feat]: added Meta tags" />
+    <MESSAGE value="Less-187 [feat]: added setContent" />
+    <option name="LAST_COMMIT_MESSAGE" value="Less-187 [feat]: added setContent" />
   </component>
 </project>
